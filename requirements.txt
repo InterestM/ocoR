@@ -1,0 +1,4 @@
+requests>=2.31
+msgpack>=1.0
+UnityPy>=1.10.0
+pycryptodome>=3.20

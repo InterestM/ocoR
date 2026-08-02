@@ -1,0 +1,8 @@
+.work/
+__pycache__/
+*.pyc
+.venv/
+Downloaded_GTX/
+Decrypted_GTX/
+*.unity3d
+*.tmp
