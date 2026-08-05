@@ -343,7 +343,7 @@ def upload_csv(
     file_map: dict[str, int],
     filename: str | None = None,
 ) -> tuple[str, str]:
-    """Upload one CSV; returns (status, detail). status in ok/new/updated/failed."""
+    """Upload one CSV; returns (status, detail). status in ok/new/updated/skipped/failed."""
     filename = filename or csv_path.name
     existing_id = file_map.get(filename)
 
@@ -378,6 +378,15 @@ def upload_csv(
                         created = (body.get("file") or {}).get("id") if isinstance(body, dict) else None
                         if created:
                             file_map[filename] = int(created)
+                    except ValueError:
+                        pass
+                else:
+                    # 服务器按内容哈希判定文件无需更新（上传内容与现有文件一致）。
+                    # 这种情况不算“更新成功”，避免统计虚报。
+                    try:
+                        body = resp.json()
+                        if isinstance(body, dict) and str(body.get("status")) == "hashMatched":
+                            return "skipped", "hashMatched（服务器判定内容一致，无需更新）"
                     except ValueError:
                         pass
                 return ("created" if action == "create" else "updated"), "OK"
@@ -576,7 +585,7 @@ def main() -> int:
                     ok = False
                     break
                 stats[status] += 1
-                log(f"  [{status}] {target}")
+                log(f"  [{status}] {target}" + (f"：{detail}" if status == "skipped" else ""))
             if not ok:
                 upload_failures.append(name)
                 log(f"  [上传失败] {name}: {detail}")
