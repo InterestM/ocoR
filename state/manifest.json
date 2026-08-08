@@ -1,5 +1,5 @@
 {
- "version": 1076200,
+ "version": 1076210,
  "items": {
   "card_episode_011ami0563_jp.gtx.unity3d": {
    "hash": "c04fd8934e589628741ad21bcadca4fa573eb41f",
@@ -7,9 +7,9 @@
    "text": ""
   },
   "cd_jp.gtx.unity3d": {
-   "hash": "5e0bf9be14c26b04ca63207af47fe44f4c2bef33",
-   "size": 4322831,
-   "text": "7727987f16484ef1221d5586f2eda2da3a92f06b493a2425c1ec6e727dbc8a89"
+   "hash": "05809f8dabfc02ff77f156fda5357aa179afc99c",
+   "size": 4323065,
+   "text": "8a298dc36d2180f503238f4c03d75ab7a67a42fedf48d65506d4f328f45f89ea"
   },
   "card_episode_002chi0703_jp.gtx.unity3d": {
    "hash": "2d4243d748cedb4c29558264725b8a7c6e06a72f",
@@ -17,9 +17,9 @@
    "text": ""
   },
   "cm_jp.gtx.unity3d": {
-   "hash": "70c1086b49353d6dab5503610202c0b3fd293acd",
-   "size": 2791566,
-   "text": "a200782cac58d2bb799e8eb26e92ad62c08229861361efb0a7625773256bf8f7"
+   "hash": "a7a1d287ecd44705c3bf60cd8fc63da3f1f7840f",
+   "size": 2792063,
+   "text": "f235c5d626f64bdf27aef2d9d06d4a8ea476f1d05fad490f1da1d8f1187d7dda"
   },
   "event_0442_story_001har_jp.gtx.unity3d": {
    "hash": "5b08743d3d35ce9a24c7235c111745bbf102bb84",
@@ -102,14 +102,14 @@
    "text": ""
   },
   "st_jp.gtx.unity3d": {
-   "hash": "8fb67b036d44cae40499c6c2b242ad0a9a381aff",
-   "size": 129752,
+   "hash": "04507d3da4f7e4d84e29d0d139333f8d5bf25ff4",
+   "size": 129785,
    "text": "58d1004cb919db2a8b828e09f6b81d242ec263f147b6836f3912f324f2f5df3a"
   },
   "md_jp.gtx.unity3d": {
-   "hash": "28b7452cc603a0fd8c7df23d40a5d121a97b9661",
-   "size": 12861216,
-   "text": "c5647b9a4c5ecb0a4bb67cd51126e30be2ddcba5ba233ba8b32ac2083e19ace1"
+   "hash": "04da3267880a4768be32058e4e8e663611704700",
+   "size": 12861715,
+   "text": "de0d951adedcdb93dfd271d1ea376b01a48b579743be997eadab4a31e23fd941"
   },
   "card_blst_043nor0614_jp.gtx.unity3d": {
    "hash": "9d4c9efb377f404a1c33afc8c104cfc72559001b",
@@ -117,8 +117,8 @@
    "text": ""
   },
   "mb_jp.gtx.unity3d": {
-   "hash": "7f64e549c46aa6d1670c732fbe2047c848413ed4",
-   "size": 3629899,
+   "hash": "a785a60f09c9d739f3db80eb24fe21143467905d",
+   "size": 3630018,
    "text": "87665b1199eaee150001007a6940a656f4de2ae46fd0e64e2b4b0b9080935117"
   },
   "card_blst_001har0674_jp.gtx.unity3d": {
