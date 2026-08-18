@@ -2,8 +2,8 @@ name: Sync MLTD text to ParaTranz
 
 on:
   schedule:
-    # 每天 03:00 UTC（北京时间 11:00）检查一次游戏资源更新
-    - cron: "0 3 * * *"
+    # 每小时检查一次游戏资源更新
+    - cron: "0 * * * *"
   workflow_dispatch:
     inputs:
       init_manifest:
