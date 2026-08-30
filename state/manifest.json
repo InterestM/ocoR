@@ -1,5 +1,5 @@
 {
- "version": 1076960,
+ "version": 1076970,
  "items": {
   "card_episode_011ami0563_jp.gtx.unity3d": {
    "hash": "c04fd8934e589628741ad21bcadca4fa573eb41f",
@@ -7,8 +7,8 @@
    "text": ""
   },
   "cd_jp.gtx.unity3d": {
-   "hash": "bf2640f324a6b0d53e4f798a1198b1740a453491",
-   "size": 4344378,
+   "hash": "aa2f80f9950c2d2144dceb568a79bebd88032ce7",
+   "size": 4344376,
    "text": "54c4920ebffbe5c1513c486da4be44acdc69e6924c743dde655187ebc746f17a"
   },
   "card_episode_002chi0703_jp.gtx.unity3d": {
@@ -17,8 +17,8 @@
    "text": ""
   },
   "cm_jp.gtx.unity3d": {
-   "hash": "14a8c4055ffd1f4c60e121d77f909c17fbb94885",
-   "size": 2798761,
+   "hash": "5d5da0dc2a4de78484dcbf9df1faffce6ea9b40c",
+   "size": 2798759,
    "text": "0c860edfb60f38a0978f4e8953a6fb878e67590d4e56d1f563be70b41097da90"
   },
   "event_0442_story_001har_jp.gtx.unity3d": {
@@ -102,14 +102,14 @@
    "text": ""
   },
   "st_jp.gtx.unity3d": {
-   "hash": "521aeb86ec2bc7dceb024d4f055f6042feb1128e",
-   "size": 130255,
+   "hash": "20e1b0a6e18636f48828efe1ec69b9cdbc2b621f",
+   "size": 130217,
    "text": "f3520aab2ad180dd5c8f54a74fa9bed307b9260b70f66f2334ec8052bafc7c14"
   },
   "md_jp.gtx.unity3d": {
-   "hash": "3328df62ff63c9237c232329afb46ae4acc3e539",
-   "size": 13013017,
-   "text": "f90b6cc72a0a786627fa1ba7d2de95f61b446d760b9683776904d569e34f9bd1"
+   "hash": "d859be67c826cce24d285a0c6c4be98574544c7e",
+   "size": 13013217,
+   "text": "fc2862004ec41a9ba407bf1a91923f4ada8e7c2320e37c252bb5e573dc19c178"
   },
   "card_blst_043nor0614_jp.gtx.unity3d": {
    "hash": "9d4c9efb377f404a1c33afc8c104cfc72559001b",
@@ -117,9 +117,9 @@
    "text": ""
   },
   "mb_jp.gtx.unity3d": {
-   "hash": "7f0c4efb936a00925eaca52713a546b4b7581dfd",
-   "size": 3648194,
-   "text": "36677ab62f644a923743456b670006c1631687d1c4601be2ef99b0d7b4443755"
+   "hash": "8bfecda98de558859c836909c5200da475fede47",
+   "size": 3648856,
+   "text": "df81d66918198358bbb8591d8c4b9a7ae2a94ecbe2f814b7595dee3d83224d0e"
   },
   "card_blst_001har0674_jp.gtx.unity3d": {
    "hash": "1055e08e7736c32f7c3fbbfb1488948935b5c1f5",
