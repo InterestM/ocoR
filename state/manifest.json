@@ -1,5 +1,5 @@
 {
- "version": 1077100,
+ "version": 1077180,
  "items": {
   "card_episode_011ami0563_jp.gtx.unity3d": {
    "hash": "c04fd8934e589628741ad21bcadca4fa573eb41f",
@@ -7,8 +7,8 @@
    "text": ""
   },
   "cd_jp.gtx.unity3d": {
-   "hash": "de4376d166e68d11139ffffb15f9f821a79a059f",
-   "size": 4358870,
+   "hash": "2cefffc0d9caf351338503e658bca24aad15c8c1",
+   "size": 4358991,
    "text": "afb97c865016e9876a236a78f6d827285f9a27d44c8fbd4d3dbc6dcd34b291c8"
   },
   "card_episode_002chi0703_jp.gtx.unity3d": {
@@ -17,8 +17,8 @@
    "text": ""
   },
   "cm_jp.gtx.unity3d": {
-   "hash": "62b0975063ccedadf96daed27d755f6fce08d98f",
-   "size": 2816561,
+   "hash": "268a1c334658fa738c681c404d2247c56a0c2b12",
+   "size": 2816443,
    "text": "8d08446647392a9cf285eed4b2a1088428ac2597864ac61b0e6e8f3b1c9386b0"
   },
   "event_0442_story_001har_jp.gtx.unity3d": {
@@ -102,13 +102,13 @@
    "text": ""
   },
   "st_jp.gtx.unity3d": {
-   "hash": "d9cbd42c1df9bc94fbac7b4d6255a86eb6fdfd5e",
-   "size": 130640,
+   "hash": "93a0c258febd56b308aa71900cedc1a2bb00140c",
+   "size": 130604,
    "text": "a3a40111e0b64c7456e7c2105471a8117317cabf3233b9455ff2b83f370eed0d"
   },
   "md_jp.gtx.unity3d": {
-   "hash": "dee19d731f61ff23dfd3d4d35d87f12e49a909c9",
-   "size": 13070969,
+   "hash": "710bb04104a37ab13bd2ad50d59d476de0ce7796",
+   "size": 13071089,
    "text": "3e1db943c1fe5042c6be73b5d89de892d4c79e8f6a605bbcca1d3a7138cb17cc"
   },
   "card_blst_043nor0614_jp.gtx.unity3d": {
@@ -117,8 +117,8 @@
    "text": ""
   },
   "mb_jp.gtx.unity3d": {
-   "hash": "5a8ad04b76f28642fe9e9abe40e283b5e5e7048c",
-   "size": 3671142,
+   "hash": "515d3b52ddf50aa41ca35db9f88dbb78ca81d4b9",
+   "size": 3671143,
    "text": "cb9b1396adb5ecde9117dff546f29b1c3e3995cc4b4c2e68469385eaa61ca792"
   },
   "card_blst_001har0674_jp.gtx.unity3d": {
@@ -59085,6 +59085,16 @@
    "hash": "18610523a1302a179149b71687733371e0473b70",
    "size": 4427,
    "text": "6cb10f10952334ec0e8152e0dc7d685832ed057bcaf67e53ad01b1e34e499396"
+  },
+  "birth_bdl_101kot_010_jp.gtx.unity3d": {
+   "hash": "42f41306a6c7026d0137f4ed67e8f332d7e8fde7",
+   "size": 1850,
+   "text": "571bbbed3466646471509fff0c28117057bc77d9bbaf9c24ef9160c14bf45644"
+  },
+  "birth_ent_101kot_010_jp.gtx.unity3d": {
+   "hash": "a41ad1ee1336fe56c0acd34134d39f17e5409689",
+   "size": 1399,
+   "text": "eb8618a3cbffc980d89c19ecfa4fba34c79c937eb48c4b8eb90cd70ca81440e0"
   }
  }
 }
