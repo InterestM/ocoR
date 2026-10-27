@@ -14,6 +14,14 @@ Pipeline
    source text of changed files (``POST /projects/{id}/files/{fileId}`` --
    the endpoint that only touches originals, never translations).
 5. Persist the updated manifest so the next run is again a small diff.
+6. Lyrics (separate step, ``--skip-lyrics`` to turn off): the ``scrobj_*``
+   bundles hold ``Imas.Live.ScenarioScrObj``/``NoteScrObj`` MonoBehaviours whose
+   ``EventScenarioData`` rows of ``type=11`` carry the song's lyric lines in
+   ``str``. Each bundle becomes one CSV named ``<bundle>_lyrics.gtx.csv``
+   (``scrobj_aftspt_lyrics.gtx.csv``) with keys ``lyric_<bundle>_<nnn>``
+   (``lyric_scrobj_aftspt_013``, 0-based like the files already on the site).
+   Empty strings and ``ci_*`` texture ids are dropped, and a file already
+   present on ParaTranz is skipped untouched.
 
 Config
 ------
@@ -57,6 +65,16 @@ DEFAULT_FILTER = ".gtx"
 DEFAULT_CONCURRENCY = 8
 DOWNLOAD_RETRIES = 3
 UPLOAD_RETRIES = 3
+
+# 歌词来源：scrobj bundle 里 EventScenarioData.type == 11 的 str 字段。
+DEFAULT_LYRICS_FILTER = "scrobj_"
+LYRICS_CSV_SUFFIX = "_lyrics.gtx.csv"
+LYRICS_KEY_PREFIX = "lyric_"
+LYRICS_KEY_DIGITS = 3
+LYRICS_KEY_START = 0  # 网站上已有的歌词文件从 000 开始，保持一致
+LYRICS_TYPE = 11
+LYRICS_SKIP_PREFIX = "ci_"  # type=89 里混进来的贴图 id，不是文本
+LYRICS_PREVIEW_ROWS = 5
 
 
 def log(msg: str) -> None:
@@ -411,6 +429,182 @@ def upload_csv(
 
 
 # --------------------------------------------------------------------------- #
+# Lyrics (scrobj bundles)
+# --------------------------------------------------------------------------- #
+
+
+def bundle_logical_name(bundle_name: str) -> str:
+    """``scrobj_aftspt.unity3d`` -> ``scrobj_aftspt``。"""
+    if bundle_name.lower().endswith(".unity3d"):
+        return bundle_name[:-8]
+    return Path(bundle_name).stem
+
+
+def lyrics_csv_name(bundle_name: str) -> str:
+    """``scrobj_aftspt.unity3d`` -> ``scrobj_aftspt_lyrics.gtx.csv``。"""
+    return f"{bundle_logical_name(bundle_name)}{LYRICS_CSV_SUFFIX}"
+
+
+def extract_lyrics(bundle_path: Path) -> list[str]:
+    """取一个 scrobj bundle 的歌词行（按时间轴顺序，已过滤空串与 ``ci_*``）。"""
+    env = UnityPy.load(str(bundle_path))
+    lyrics: list[str] = []
+
+    for obj in env.objects:
+        if obj.type.name != "MonoBehaviour":
+            continue
+        try:
+            tree = obj.read_typetree()
+        except Exception:
+            # release 包里个别对象没有可用 TypeTree，跳过就好
+            continue
+        scenario = tree.get("scenario") if isinstance(tree, dict) else None
+        if not isinstance(scenario, list):
+            continue
+        for row in scenario:
+            if not isinstance(row, dict) or row.get("type") != LYRICS_TYPE:
+                continue
+            text = row.get("str")
+            if not isinstance(text, str):
+                continue
+            text = text.strip()
+            if not text or text.startswith(LYRICS_SKIP_PREFIX):
+                continue
+            lyrics.append(text)
+
+    return lyrics
+
+
+def lyrics_rows(bundle_name: str, lyrics: list[str]) -> list[list[str]]:
+    """歌词 -> ParaTranz 行，键为 ``lyric_<bundle>_<序号>``（0 起，3 位补零）。"""
+    logical = bundle_logical_name(bundle_name)
+    rows: list[list[str]] = []
+    for index, text in enumerate(lyrics, LYRICS_KEY_START):
+        key = f"{LYRICS_KEY_PREFIX}{logical}_{index:0{LYRICS_KEY_DIGITS}d}"
+        rows.append([key, text, "", ""])
+    return rows
+
+
+def sync_lyrics(args: argparse.Namespace, index: dict[str, Any]) -> tuple[dict[str, int], list[str]]:
+    """把 scrobj bundle 里的歌词按“每首歌一个 CSV”传到 ParaTranz。
+
+    网站上已经有同名文件就跳过（不下载、不覆盖），空歌词/全是 ``ci_*`` 的也跳过。
+    """
+    stats = {"pending": 0, "created": 0, "skipped": 0, "empty": 0, "failed": 0, "previewed": 0}
+    failures: list[str] = []
+    # --skip-upload 只做本地转换；--dry-run 连下载都只取预览样本。
+    can_upload = not (args.dry_run or args.skip_upload)
+
+    items = index["items"]
+    candidates = {
+        name: item for name, item in items.items() if args.lyrics_filter.lower() in name.lower()
+    }
+    if args.lyrics_limit:
+        candidates = dict(sorted(candidates.items())[: args.lyrics_limit])
+    log(f"歌词：index 中匹配 {args.lyrics_filter!r} 的 bundle {len(candidates)} 个")
+    if not candidates:
+        return stats, failures
+
+    file_map: dict[str, int] = {}
+    if args.token and args.project_id:
+        try:
+            file_map = get_file_map(args.project_id, args.token)
+        except requests.RequestException as exc:
+            log(f"歌词：获取 ParaTranz 文件列表失败: {exc}")
+            return stats, ["<file-map>"]
+    elif can_upload:
+        log("歌词：缺少 PARATRANZ_TOKEN / PARATRANZ_PROJECT_ID，跳过歌词上传（--dry-run 可只看计划）")
+        return stats, ["<config>"]
+
+    pending: dict[str, dict[str, Any]] = {}
+    for name, item in candidates.items():
+        if lyrics_csv_name(name) in file_map:
+            stats["skipped"] += 1
+            continue
+        pending[name] = item
+    stats["pending"] = len(pending)
+    log(
+        f"歌词：待新建 {len(pending)} 个，网站已存在跳过 {stats['skipped']} 个"
+        + ("（无 token，未做存在性比对）" if not file_map and args.dry_run else "")
+    )
+
+    todo = sorted(pending)
+    if args.dry_run:
+        todo = todo[: args.lyrics_preview]
+    if not todo:
+        return stats, failures
+
+    work = Path(args.work_dir)
+    download_dir = work / "downloads"
+    csv_dir = work / "lyrics_csv"
+    download_dir.mkdir(parents=True, exist_ok=True)
+    csv_dir.mkdir(parents=True, exist_ok=True)
+
+    if args.dry_run:
+        log(f"歌词：dry-run，只下载预览 {len(todo)} 个 bundle")
+    elif not can_upload:
+        log(f"歌词：--skip-upload，只做本地转换（{len(todo)} 个 bundle）")
+    else:
+        log(f"歌词：下载 {len(todo)} 个 bundle...")
+
+    with ThreadPoolExecutor(max_workers=args.concurrency) as pool:
+        results = list(
+            pool.map(lambda name: download_bundle(name, pending[name], index["version"], download_dir), todo)
+        )
+    for name, error in results:
+        if error:
+            stats["failed"] += 1
+            failures.append(name)
+            log(f"  [歌词下载失败] {name}: {error}")
+
+    for name, error in results:
+        if error:
+            continue
+        target = lyrics_csv_name(name)
+        try:
+            lyrics = extract_lyrics(download_dir / name)
+        except Exception as exc:
+            stats["failed"] += 1
+            failures.append(name)
+            log(f"  [歌词解析失败] {name}: {exc}")
+            continue
+        if not lyrics:
+            stats["empty"] += 1
+            log(f"  [无歌词] {name}")
+            continue
+
+        rows = lyrics_rows(name, lyrics)
+        csv_path = csv_dir / target
+        write_csv(csv_path, rows)
+
+        if args.dry_run:
+            stats["previewed"] += 1
+            log(f"  [预览] {target}  {len(rows)} 行 -> {csv_path}")
+            for row in rows[:LYRICS_PREVIEW_ROWS]:
+                log(f"         {row[0]},{row[1]}")
+            if len(rows) > LYRICS_PREVIEW_ROWS:
+                log(f"         ...（共 {len(rows)} 行）")
+            continue
+
+        if not can_upload:
+            stats["created"] += 1
+            log(f"  [歌词已转换] {target}（{len(rows)} 行，未上传）")
+            continue
+
+        status, detail = upload_csv(csv_path, args.project_id, args.token, file_map, filename=target)
+        if status == "failed":
+            stats["failed"] += 1
+            failures.append(name)
+            log(f"  [歌词上传失败] {target}: {detail}")
+        else:
+            stats["created"] += 1
+            label = {"created": "歌词新建", "updated": "歌词更新"}.get(status, "歌词跳过")
+            log(f"  [{label}] {target}（{len(rows)} 行）")
+
+    return stats, failures
+
+
+# --------------------------------------------------------------------------- #
 # Main pipeline
 # --------------------------------------------------------------------------- #
 
@@ -429,6 +623,10 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="只计算差异并打印，不做任何下载/上传")
     parser.add_argument("--skip-upload", action="store_true", help="下载、解密、转换并更新 manifest，但不上传")
     parser.add_argument("--repair-missing", action="store_true", help="上传前与 ParaTranz 文件列表对账，发现 manifest 声称已同步但网站上缺失的文件自动补传")
+    parser.add_argument("--skip-lyrics", action="store_true", help="跳过歌词（scrobj）同步")
+    parser.add_argument("--lyrics-filter", default=DEFAULT_LYRICS_FILTER, help=f"歌词来源 bundle 的逻辑名包含该串（默认 {DEFAULT_LYRICS_FILTER}）")
+    parser.add_argument("--lyrics-limit", type=int, default=0, help="本次最多处理几个歌词 bundle（0 = 全部，便于分批上线）")
+    parser.add_argument("--lyrics-preview", type=int, default=3, help="dry-run 时下载预览几个歌词文件（默认 3）")
     args = parser.parse_args()
 
     index = fetch_index(args.index_file)
@@ -454,14 +652,32 @@ def main() -> int:
     if removed:
         log(f"注意：{len(removed)} 个文件已从 index 移除（不会自动删除 ParaTranz 上的文件）")
 
+    # 0. 歌词（scrobj）先跑：与 gtx 差异无关，网站上已有同名文件就跳过。
+    lyrics_stats = {"pending": 0, "created": 0, "skipped": 0, "empty": 0, "failed": 0, "previewed": 0}
+    lyrics_failures: list[str] = []
+    if not args.skip_lyrics:
+        lyrics_stats, lyrics_failures = sync_lyrics(args, index)
+        if args.dry_run:
+            tail = f"，dry-run 预览 {lyrics_stats['previewed']} 个"
+        elif args.skip_upload:
+            tail = f"，本地转换 {lyrics_stats['created']} 个"
+        else:
+            tail = f"，已新建 {lyrics_stats['created']} 个"
+        log(
+            "歌词："
+            + f"计划新建 {lyrics_stats['pending']}，网站已存在跳过 {lyrics_stats['skipped']}，"
+            + f"无歌词跳过 {lyrics_stats['empty']}，失败 {lyrics_stats['failed']}"
+            + tail
+        )
+
     if args.dry_run:
         for name in sorted(to_process)[:50]:
             log(f"  [待处理] {name}")
         if len(to_process) > 50:
             log(f"  ... 其余 {len(to_process) - 50} 个")
-        return 0
+        return 1 if lyrics_failures else 0
 
-    # 0. 上传模式下先拉取 ParaTranz 文件列表；开启补传时顺便对账。
+    # 1. 上传模式下先拉取 ParaTranz 文件列表；开启补传时顺便对账。
     needs_upload = not args.skip_upload
     file_map: dict[str, int] = {}
     repair_names: set[str] = set()
@@ -490,8 +706,8 @@ def main() -> int:
                     log(f"  [无法补传] {name}")
 
     if not to_process:
-        log("没有新增、变更或需要补传的文件，无需处理。")
-        return 0
+        log("没有新增、变更或需要补传的 gtx 文件，无需处理。")
+        return 1 if lyrics_failures else 0
 
     # 1. Download changed bundles.
     work_dir = Path(args.work_dir)
@@ -607,7 +823,9 @@ def main() -> int:
         f"完成：新建 {stats['created']}，更新 {stats['updated']}，跳过 {stats['skipped']}"
         + (f"，失败 {len(upload_failures)}" if upload_failures else "")
     )
-    return 1 if upload_failures else 0
+    if not args.skip_lyrics:
+        log(f"歌词：新建 {lyrics_stats['created']}，网站已存在跳过 {lyrics_stats['skipped']}，失败 {len(lyrics_failures)}")
+    return 1 if (upload_failures or lyrics_failures) else 0
 
 
 if __name__ == "__main__":
