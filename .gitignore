@@ -6,3 +6,8 @@ Downloaded_GTX/
 Decrypted_GTX/
 *.unity3d
 *.tmp
+
+# Cloudflare Worker
+node_modules/
+.wrangler/
+.dev.vars

@@ -1,0 +1,14 @@
+name = "mltd-sync-trigger"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# 每小时第 1 分钟（UTC）触发一次。Cloudflare Cron 与 GitHub Actions 一样是
+# best-effort 投递，但通常只延迟数秒到数分钟，远好于 GitHub 自带 schedule。
+[triggers]
+crons = ["1 * * * *"]
+
+# 非敏感配置。token 之类的敏感信息请用 `wrangler secret put` 写入。
+[vars]
+GITHUB_REPO = "InterestM/ocoR"
+GITHUB_WORKFLOW = "sync.yml"
+GITHUB_REF = "main"

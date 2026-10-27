@@ -1,9 +1,7 @@
 name: Sync MLTD text to ParaTranz
 
 on:
-  schedule:
-    # 每小时检查一次游戏资源更新
-    - cron: "0 * * * *"
+  # 定时由 cloudflare-worker/ 中的 Worker 通过 workflow_dispatch 触发
   workflow_dispatch:
     inputs:
       init_manifest:
