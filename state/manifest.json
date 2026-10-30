@@ -1,5 +1,5 @@
 {
- "version": 1078030,
+ "version": 1078050,
  "items": {
   "card_episode_011ami0563_jp.gtx.unity3d": {
    "hash": "c04fd8934e589628741ad21bcadca4fa573eb41f",
@@ -7,8 +7,8 @@
    "text": ""
   },
   "cd_jp.gtx.unity3d": {
-   "hash": "6b27078de4a381f5d32c0993fe70d1d0db1a2f7f",
-   "size": 4427639,
+   "hash": "34579487a874fd1720384454e435eb48a519eb2a",
+   "size": 4427644,
    "text": "f0232a14289393d482934150f2b2cf63e63235a84b77db4d14aa005ad0949016"
   },
   "card_episode_002chi0703_jp.gtx.unity3d": {
@@ -17,9 +17,9 @@
    "text": ""
   },
   "cm_jp.gtx.unity3d": {
-   "hash": "9fda41f27c6a72f391443d782276ab83b33550e1",
-   "size": 2831863,
-   "text": "076e9639275400176b4d2f4452904513f4dfbc245fbe1e252a192a2774fd1249"
+   "hash": "569152a5143f5505c614f040647609c87cdb915a",
+   "size": 2831852,
+   "text": "b5e75bf0578f2fd1ef8d3472ce6ecb134dd31d3d4ab53ec9c4a43745c8809312"
   },
   "event_0442_story_001har_jp.gtx.unity3d": {
    "hash": "5b08743d3d35ce9a24c7235c111745bbf102bb84",
@@ -102,14 +102,14 @@
    "text": ""
   },
   "st_jp.gtx.unity3d": {
-   "hash": "cfd326760418a31a72132b5ba543a58be712fd22",
-   "size": 132201,
+   "hash": "fed084c4a26ba0d779f15c6e2ad2bc509eb389fc",
+   "size": 132251,
    "text": "111cc2c858962feccf3bd517b2f5be2824dd1068c2dc44113b66ed3b9518b7c7"
   },
   "md_jp.gtx.unity3d": {
-   "hash": "f6272e119c832ec29da421a934d67018bb51deab",
-   "size": 13263456,
-   "text": "d0e41e9dbe7215ef225491b4c1e5a9b57772bb356d2facf7318b73e06f9a7462"
+   "hash": "9e7771fb8a3d235b56dd8c6f29f2a9d6830d5ac3",
+   "size": 13263437,
+   "text": "9c41b74be18b159929e0907e763d5f7c80dd9b6cbf317be058c2bf34e5077ee7"
   },
   "card_blst_043nor0614_jp.gtx.unity3d": {
    "hash": "9d4c9efb377f404a1c33afc8c104cfc72559001b",
@@ -117,8 +117,8 @@
    "text": ""
   },
   "mb_jp.gtx.unity3d": {
-   "hash": "866f505acd840cb56698806d3709eea322f5531b",
-   "size": 3777353,
+   "hash": "aa0db33489a7596e538a712fc0072579e235d740",
+   "size": 3777358,
    "text": "7fbe94b1798c55027eda85e285a13528ea86fd0cabe1a63e54d6713d4bc24fe3"
   },
   "card_blst_001har0674_jp.gtx.unity3d": {
@@ -59675,6 +59675,276 @@
    "hash": "3f04e206dc00332aad7aab4a421994c6273d3720",
    "size": 245707,
    "text": "a73c7a1638b423fe1640ec667948b610ed50772e2120e0f756acb247deef4b11"
+  },
+  "season_a_2026_001har_400_jp.gtx.unity3d": {
+   "hash": "d2ec7c72d340f6d2c03463699d770ea568fdbdea",
+   "size": 1958,
+   "text": "b19ad9a5786eae5a582a66d7071f58f777d3fd635ed35fb23df3076f9d42211a"
+  },
+  "season_a_2026_002chi_400_jp.gtx.unity3d": {
+   "hash": "6a3e798f06677c079a258c41eb306913ef2b8274",
+   "size": 1910,
+   "text": "92cd988fba47a97ee231b2a080e86eebf0c46b61337dd01fcc9fd6cc955d389a"
+  },
+  "season_a_2026_003mik_400_jp.gtx.unity3d": {
+   "hash": "f0dc80c3d3cce49650522c40333d08a7d9138b55",
+   "size": 1906,
+   "text": "1c11a84f5f1acaf66766b589eba74440d33fac5baee26d2a9c3eb8dabd11bc9a"
+  },
+  "season_a_2026_004yuk_400_jp.gtx.unity3d": {
+   "hash": "dc712951ca291b98a21b4c99bd020397fcd33c7c",
+   "size": 1942,
+   "text": "3a4ce8611943258fd228ce8716b54dac352bb5cd28ce84f8fdfeec275d6905d2"
+  },
+  "season_a_2026_005yay_400_jp.gtx.unity3d": {
+   "hash": "69264369ba4ffb4347b29db3f3b20f6f7c9dd575",
+   "size": 1986,
+   "text": "895a080d76190aaf8ec1b310998791a921dd99a6eee53d6d2878bce5ef46a016"
+  },
+  "season_a_2026_006mak_400_jp.gtx.unity3d": {
+   "hash": "d2ec7c72d340f6d2c03463699d770ea568fdbdea",
+   "size": 1958,
+   "text": "27a2a0d709c86787742d884740ec94617e4fdb0d2b1e92da42318d2c85db5fcf"
+  },
+  "season_a_2026_007ior_400_jp.gtx.unity3d": {
+   "hash": "8b25622591ba75bbd1a27657771a858662f371d4",
+   "size": 2035,
+   "text": "0aefc52d1d653020bee4b7aeb6f5c54b415d79d20aa7743d24efb8d0d8d1a316"
+  },
+  "season_a_2026_008tak_400_jp.gtx.unity3d": {
+   "hash": "69264369ba4ffb4347b29db3f3b20f6f7c9dd575",
+   "size": 1986,
+   "text": "32e858b2dbaeb4214140cf603addf844aca4d70e0678946f2d1c74ab5c56b919"
+  },
+  "season_a_2026_009rit_400_jp.gtx.unity3d": {
+   "hash": "d2ec7c72d340f6d2c03463699d770ea568fdbdea",
+   "size": 1958,
+   "text": "47219fcc9d483606ac3c50067e9174b03454fe4b59c075a3f1b767180d7c9485"
+  },
+  "season_a_2026_010azu_400_jp.gtx.unity3d": {
+   "hash": "eb73dcaa9d06b3a098749459b3001558dacadee1",
+   "size": 1921,
+   "text": "06bdeaec2b4f89152f3d74573fa6ab3ad985c5a22d6147548583c6dc08dc7996"
+  },
+  "season_a_2026_011ami_400_jp.gtx.unity3d": {
+   "hash": "3ba2dade1629d9ba412ed9189f9644bd89072f07",
+   "size": 2004,
+   "text": "c2f1d56c25e2a1c88d86531a6982dcfff14bd747e013e5f2bdd55b95230bb3ff"
+  },
+  "season_a_2026_012mam_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "a7de57440cc98181fc5f289126101680ba743d3502ad81807cb0e3b89ef5b1bf"
+  },
+  "season_a_2026_013hib_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "88ab8a8e62941cb3850ed4df53d7dc9b4296e4cdb61997515da1df4b6720aa8b"
+  },
+  "season_a_2026_014mir_400_jp.gtx.unity3d": {
+   "hash": "f0dc80c3d3cce49650522c40333d08a7d9138b55",
+   "size": 1906,
+   "text": "b478e96038112096809a2cd3418de9af842a7bd49712c360611d8563ed23e44c"
+  },
+  "season_a_2026_015siz_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "37640dce23602cc9ac7d13f844d2f4d0132825fbe8b5244f0b96363cbecf3c4b"
+  },
+  "season_a_2026_016tsu_400_jp.gtx.unity3d": {
+   "hash": "6d5a794bc25fe4020732abdc067ae7c6c4ab6d79",
+   "size": 1938,
+   "text": "8dfca2ed318ff68de55f1ae9d5ab5587585c26e8fcd47946de5bb96715a10312"
+  },
+  "season_a_2026_017kth_400_jp.gtx.unity3d": {
+   "hash": "6a3e798f06677c079a258c41eb306913ef2b8274",
+   "size": 1910,
+   "text": "763e768b4e175db45e0b5818bc5f092bb44b84ec16f7a443ae7f175801c546b5"
+  },
+  "season_a_2026_018ele_400_jp.gtx.unity3d": {
+   "hash": "857b8271eb115719636a38372ac6adbc56da1714",
+   "size": 1890,
+   "text": "3dfdc65c6cf8b8bba75c0f107eafbf9101a452106deb2c05946e1d4da01649b6"
+  },
+  "season_a_2026_019min_400_jp.gtx.unity3d": {
+   "hash": "d2ec7c72d340f6d2c03463699d770ea568fdbdea",
+   "size": 1958,
+   "text": "da6f2e697e0b6268ab0d03d669897579ad9fbccf297af5be2210eee0cb2a7f62"
+  },
+  "season_a_2026_020meg_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "f47c8563ce70021ed0f4576468029b28ff0e7b45c837489d4b5658cddbbd5bd1"
+  },
+  "season_a_2026_021mat_400_jp.gtx.unity3d": {
+   "hash": "43c30f0443f6f63a6152f6b65fef3ebf47e6a83d",
+   "size": 1926,
+   "text": "4c18522dc5ca439116f35d64186bd9cba239fccd19ea8cf872533d1441bcec4d"
+  },
+  "season_a_2026_022ser_400_jp.gtx.unity3d": {
+   "hash": "74b9740a1858e98015978ea636eff6ebf6626240",
+   "size": 1969,
+   "text": "2cd5adad5348413c550e447dbe6923b79f3382e459f7ff56421dcdbda0e4a1e6"
+  },
+  "season_a_2026_023aka_400_jp.gtx.unity3d": {
+   "hash": "db719b636b389537b2debc7d2317be223a14ecd6",
+   "size": 1990,
+   "text": "e0ffd3f087accbb64b17adf3aa532f6b0f28995ee29213d876d60f4a7faf466c"
+  },
+  "season_a_2026_024ann_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "7955ba155704e19584781ccd7f9be57b226c9b4357bc7c0f67630df46d85b367"
+  },
+  "season_a_2026_025roc_400_jp.gtx.unity3d": {
+   "hash": "d59ffbbe316b865335e990915eba4e7f43f71c88",
+   "size": 1953,
+   "text": "5f53d1b823d27ed3d892a37abb79deb627614918694697e0fada7b5738b92893"
+  },
+  "season_a_2026_026yur_400_jp.gtx.unity3d": {
+   "hash": "0f106477dd4cdf2cb506c8ada60ef541fcbdcb2a",
+   "size": 2017,
+   "text": "4e401d388478a7e6202d0050e2292eec8124a85fa4f856fd65869bd8b1025988"
+  },
+  "season_a_2026_027say_400_jp.gtx.unity3d": {
+   "hash": "6a3e798f06677c079a258c41eb306913ef2b8274",
+   "size": 1910,
+   "text": "2af40e0fcc17e8682e3ed24abcd118d68b9172f0abadb821a34f6bea2e16204b"
+  },
+  "season_a_2026_028ari_400_jp.gtx.unity3d": {
+   "hash": "605d5ca9e22ff8e46d823282ee401aa191ccb242",
+   "size": 2087,
+   "text": "dcd82cca259b9422c812784e4c420996634b013eedbe8f9ba03c691c173956a3"
+  },
+  "season_a_2026_029umi_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "d2e890d7bb423cdcc94f5b9e97fcc14e46ea5d2a9be3daadd073d19edae54cb3"
+  },
+  "season_a_2026_030iku_400_jp.gtx.unity3d": {
+   "hash": "69264369ba4ffb4347b29db3f3b20f6f7c9dd575",
+   "size": 1986,
+   "text": "14dfd7f24601c796235d6f6593143b3c5194fadf37cd3f0d392cd34dc0cd10f1"
+  },
+  "season_a_2026_031tom_400_jp.gtx.unity3d": {
+   "hash": "8b25622591ba75bbd1a27657771a858662f371d4",
+   "size": 2035,
+   "text": "e9918de9675496d4183fca3e2ceebff2e19b4b1380a976111aee50f281483dcb"
+  },
+  "season_a_2026_032emi_400_jp.gtx.unity3d": {
+   "hash": "50a9198bbe15e7ec94f4853963cb57e571ed5748",
+   "size": 2082,
+   "text": "e7fe8cbdc391febb6a2f27b07671886f1ce28dec3e241669645479812fec3d96"
+  },
+  "season_a_2026_033sih_400_jp.gtx.unity3d": {
+   "hash": "391f4442ef3db74afc877636a4ea0b7a530cf3d6",
+   "size": 2039,
+   "text": "7f430ee6abd77c7b8eed886197ad74b522d5e2cd0eafaef33747c4ed967497e8"
+  },
+  "season_a_2026_034ayu_400_jp.gtx.unity3d": {
+   "hash": "3ba2dade1629d9ba412ed9189f9644bd89072f07",
+   "size": 2004,
+   "text": "565014743653f07a797037d8d7b459e3fd63309c6eba4b22e2791c6a476cdf7d"
+  },
+  "season_a_2026_035hin_400_jp.gtx.unity3d": {
+   "hash": "fa2465a118d3a21e94c859b9f087a04fda5f6d10",
+   "size": 2067,
+   "text": "01bd6eb7169b41ba681d846f5c6ee990494aee4250e5a25927f8d926ab5dafec"
+  },
+  "season_a_2026_036kan_400_jp.gtx.unity3d": {
+   "hash": "4e6aefadbd2a634d09e966cb9756ca53cc45db5f",
+   "size": 2003,
+   "text": "2999f7c23eec821ee6b8d128e29db9da4292bd601734aa9b985784721ca0ced4"
+  },
+  "season_a_2026_037nao_400_jp.gtx.unity3d": {
+   "hash": "1a2fda0a1460b798c3bf99f65ebb857cad8ab818",
+   "size": 2051,
+   "text": "f0bd916c13c29b480b096d6b19d776ea27cb72f3d3d4a8627ed68cbcc7e0363e"
+  },
+  "season_a_2026_038chz_400_jp.gtx.unity3d": {
+   "hash": "0f106477dd4cdf2cb506c8ada60ef541fcbdcb2a",
+   "size": 2017,
+   "text": "fed29c0fcbc84fecdf6351c091e77014783316fcd669b9403e646a0efdb8bf40"
+  },
+  "season_a_2026_039kon_400_jp.gtx.unity3d": {
+   "hash": "8b25622591ba75bbd1a27657771a858662f371d4",
+   "size": 2035,
+   "text": "8ed7c97bfa702494778ab728dc3bb9dca4fcdff46a8b35d8988bb6f3bd0e319c"
+  },
+  "season_a_2026_040tam_400_jp.gtx.unity3d": {
+   "hash": "db719b636b389537b2debc7d2317be223a14ecd6",
+   "size": 1990,
+   "text": "df24eb0439026bd1124f8e3fbafa57036cb7dc755cec28d50f3da83a8670fa47"
+  },
+  "season_a_2026_041fuk_400_jp.gtx.unity3d": {
+   "hash": "fa2465a118d3a21e94c859b9f087a04fda5f6d10",
+   "size": 2067,
+   "text": "27e37f1045b88cf93bac09261a4a27b7b5bb71e8074cb2d272eddd34183796a6"
+  },
+  "season_a_2026_042miy_400_jp.gtx.unity3d": {
+   "hash": "26e7f9ec5c2c802d3be9b3d194f11635bde1b0b1",
+   "size": 2034,
+   "text": "85204d17746e2f9b54275a1d5ba3038eacad64e99d43affc7e6dc69b0a6dc51c"
+  },
+  "season_a_2026_043nor_400_jp.gtx.unity3d": {
+   "hash": "c1568480a0f673cebd5d909f1f819c0a3e2f725b",
+   "size": 2022,
+   "text": "417d0d063ad49e0085b203429c9db83136d20f363d07315d0253b7c423057183"
+  },
+  "season_a_2026_044miz_400_jp.gtx.unity3d": {
+   "hash": "f1ac3a8b5152882fff6b97c4bebd5695ecab11fa",
+   "size": 2016,
+   "text": "dc927ecc17966d314f554b72c24e3a42b784516825937c4124523c4388a6a352"
+  },
+  "season_a_2026_045kar_400_jp.gtx.unity3d": {
+   "hash": "4d7239cd53e8402222a778678239b1549d88aee6",
+   "size": 2054,
+   "text": "5345299c42dee5016c9ed056e2f6517574a309868859194068f28260b2120f6a"
+  },
+  "season_a_2026_046rio_400_jp.gtx.unity3d": {
+   "hash": "a7e6646b116186f756552f9f861353f5de8566d9",
+   "size": 1957,
+   "text": "9a8b02178a5a4485125b9a1dc547e3a575aa1b73cfb953e7079d7dd2bcd8425d"
+  },
+  "season_a_2026_047sub_400_jp.gtx.unity3d": {
+   "hash": "69264369ba4ffb4347b29db3f3b20f6f7c9dd575",
+   "size": 1986,
+   "text": "bcbb86c675dc0777d56045fa24b2dadf44332de74ba77972582626f7b08bbaba"
+  },
+  "season_a_2026_048rei_400_jp.gtx.unity3d": {
+   "hash": "3ba2dade1629d9ba412ed9189f9644bd89072f07",
+   "size": 2004,
+   "text": "a9fe3586d7e590ca6e3c08ce5e29a985491fceac4b2fed4d1ab42f4491b3a292"
+  },
+  "season_a_2026_049mom_400_jp.gtx.unity3d": {
+   "hash": "4d7239cd53e8402222a778678239b1549d88aee6",
+   "size": 2054,
+   "text": "bcb937e8e792db9df16a9152b533c6471a6f0c9b00005b1417be9df2607892a4"
+  },
+  "season_a_2026_050jul_400_jp.gtx.unity3d": {
+   "hash": "a77663c7b9c1a3705a1af5050a1125f7bdd656e8",
+   "size": 1954,
+   "text": "c6a724120113bb5117883fd7e77d132d143d5e7968154cb7a2576a8dca02e47a"
+  },
+  "season_a_2026_051tmg_400_jp.gtx.unity3d": {
+   "hash": "69a8d5e95330b87dd184b95c3f8cb086873f6ab6",
+   "size": 2023,
+   "text": "9febccc348ecaf1fe28c17e47228a93562f07d775eaf5b793428ebb2b42bdb33"
+  },
+  "season_a_2026_052kao_400_jp.gtx.unity3d": {
+   "hash": "69a8d5e95330b87dd184b95c3f8cb086873f6ab6",
+   "size": 2023,
+   "text": "993e0bb22e3106dcb28d76f937a71c1a46d655f60d53337f3bed65b65e151a4b"
+  },
+  "season_a_2026_201xxx_400_jp.gtx.unity3d": {
+   "hash": "6b50ba11a441c4bf36f59821f22a2ab9652c2a2a",
+   "size": 1986,
+   "text": "042c81094d8d5050614410dbe4bdc61cea7e17d89c228a4c807655afb33d0c27"
+  },
+  "season_a_2026_202xxx_400_jp.gtx.unity3d": {
+   "hash": "e24989fbdea12ec0b3e27f5941ae3c2fca26d394",
+   "size": 2050,
+   "text": "f36a549775d7b50ab7a191dc4ad88e0d85acb566fe2d3f2636f0685de579920b"
   }
  }
 }
