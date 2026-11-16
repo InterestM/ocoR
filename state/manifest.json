@@ -1,5 +1,5 @@
 {
- "version": 1078815,
+ "version": 1078850,
  "items": {
   "card_episode_011ami0563_jp.gtx.unity3d": {
    "hash": "c04fd8934e589628741ad21bcadca4fa573eb41f",
@@ -7,8 +7,8 @@
    "text": ""
   },
   "cd_jp.gtx.unity3d": {
-   "hash": "d32ebe5539db191e92f167f750465f15c5c93ca6",
-   "size": 4453838,
+   "hash": "6833a3c4701652946cd50d99136d7a6f05023f78",
+   "size": 4453718,
    "text": "cbf691bad66ed18e99a55425873880ee5bc33ba6975434d04182279587de25ce"
   },
   "card_episode_002chi0703_jp.gtx.unity3d": {
@@ -17,8 +17,8 @@
    "text": ""
   },
   "cm_jp.gtx.unity3d": {
-   "hash": "a1daf05a5d3415a57aeedeebe8a8195ee1d29a8a",
-   "size": 2844527,
+   "hash": "dbb489e3869360a384c1142fcc2e0522354c1bf4",
+   "size": 2844406,
    "text": "067aadb8141aafdb144769b38e49cf1ab0d1dab735963e4ddc3bb9cb6d735826"
   },
   "event_0442_story_001har_jp.gtx.unity3d": {
@@ -102,12 +102,12 @@
    "text": ""
   },
   "st_jp.gtx.unity3d": {
-   "hash": "b889b99e7b6b3b875ad48b2ae93e1fd5fb5c1c55",
-   "size": 132246,
+   "hash": "ddd518c1dfa45a63829cd330b5ca3a38e41558d2",
+   "size": 132201,
    "text": "111cc2c858962feccf3bd517b2f5be2824dd1068c2dc44113b66ed3b9518b7c7"
   },
   "md_jp.gtx.unity3d": {
-   "hash": "17f9d26c2cc7cd05452a2c621c45d28d080cc24b",
+   "hash": "c8cb1c5b31a92e05291ab6453aad0a7e8755be85",
    "size": 13311522,
    "text": "e08a3bef3315fd33344b4a34b5e6055491709fa36fbcc35e804d0ee25b6b29b8"
   },
@@ -117,9 +117,9 @@
    "text": ""
   },
   "mb_jp.gtx.unity3d": {
-   "hash": "deba3bc3ced1b55035bd6e8a4ba7cd2c20940150",
-   "size": 3810468,
-   "text": "af686d7db091cb5d31fdd541f88e204907991997aad519305519953854fa8f3d"
+   "hash": "ed05a20dd5049f11e93308922c74eca41a434066",
+   "size": 3811143,
+   "text": "1d338e439f48082b79476119056fb70340dc63e822971d6aa69a47c65cdbe56e"
   },
   "card_blst_001har0674_jp.gtx.unity3d": {
    "hash": "1055e08e7736c32f7c3fbbfb1488948935b5c1f5",
